@@ -1,0 +1,51 @@
+from djitellopy import Tello
+
+from time import sleep
+tello = Tello()
+
+#leg  1
+tello.connect()
+tello.takeoff()
+
+#leg 2 move up
+tello.up(102)
+sleep()
+
+#leg 3 move forward
+tello.forward(183)
+sleep()
+
+#leg 4 rotate ccw 90
+tello.ccw(90)
+sleep()
+
+tello.down(83)
+sleep()
+
+tello.forward(183)
+sleep()
+
+tello.ccw(-90)
+sleep()
+
+tello.forward(92)
+sleep()
+
+tello.ccw(-90)
+sleep()
+
+tello.up(25)
+sleep()
+
+tello.forward(92)
+sleep()
+
+tello.ccw(90)
+sleep()
+
+tello.forward(192)
+sleep()
+
+#leg  Stop
+tello.send_rc_control(0,0,0,0)
+tello.land
